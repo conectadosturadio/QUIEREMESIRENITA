@@ -1,0 +1,60 @@
+
+# ¡Buenas noticias! Ya avanzamos 🎉
+
+La página en blanco significa que **el `index.html` ya se encontró** (ya no hay error 404). El problema ahora es que **el video no está cargando**. Las causas más comunes son:
+
+---
+
+## 🔍 Diagnóstico rápido (haz esto primero)
+
+### 1. Verifica que el video esté en el repositorio
+- Ve a tu repo → pestaña **Code**
+- **¿Ves el archivo de video ahí?** (ej: `video.mp4`)
+
+⚠️ **MUY IMPORTANTE:** GitHub **no permite archivos mayores a 25 MB** subidos desde la web. Si tu video pesa más de 25 MB, **nunca se subió** o está incompleto. Esa es probablemente la causa.
+
+### 2. Presiona F12 en la página en blanco
+- Se abre la consola del navegador
+- Ve a la pestaña **Console** — si hay errores en rojo (como `Failed to load resource: 404`), confirma que el video no se encuentra.
+
+### 3. Verifica que el nombre coincida EXACTAMENTE
+Si en tu HTML dice:
+```html
+<video src="video.mp4">
+```
+Pero tu archivo se llama `Video.mp4` o `video .mp4` (con espacio) o `mi-video.mp4` → **no cargará**. Debe ser idéntico, letra por letra, incluyendo mayúsculas.
+
+---
+
+## ✅ Plantilla que funciona (copia y pega)
+
+Reemplaza **todo** el contenido de tu `index.html` con esto y cambia `video.mp4` por el nombre exacto de tu archivo:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUIERE ME SIRENITA</title>
+</head>
+<body style="background:#111; display:flex; justify-content:center; align-items:center; min-height:100vh; margin:0;">
+  <video controls autoplay muted playsinline style="max-width:95%; max-height:95vh;">
+    <source src="video.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+  </video>
+</body>
+</html>
+```
+
+Guarda → **Commit changes** → espera 1-2 minutos → recarga con **Ctrl + Shift + R** (recarga forzada).
+
+---
+
+## 📋 Para ayudarte mejor, dime:
+
+1. **¿Qué archivos ves** en la pestaña Code de tu repositorio? (nombres exactos)
+2. **¿Cuánto pesa tu video?** (clic derecho en tu PC → Propiedades)
+3. ¿El video es `.mp4`, `.mov`, `.webm`...?
+
+Con esa info te digo exactamente qué está fallando. 💪
